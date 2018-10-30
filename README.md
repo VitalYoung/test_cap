@@ -1,11 +1,11 @@
-== 使用Capistrano部署Rails项目
+## 使用Capistrano部署Rails项目
 
 ruby 2.3.5
 
 Rails 4.0.13
 
 
-=== 1.Gemfile
+### 1.Gemfile
 
 ```
 group :development do
@@ -26,13 +26,13 @@ end
 ```
 
 
-=== 2.生成capistrano的相关配置文件
+### 2.生成capistrano的相关配置文件
 
 ```
 cap install
 ```
 
-=== 3.编辑 Capfile（项目的根目录下）
+### 3.编辑 Capfile（项目的根目录下）
 
 ```
 # 加上这行
@@ -43,7 +43,7 @@ require "capistrano/rvm"
 require "capistrano/passenger"
 ```
 
-=== 4.编辑 config/deploy.rb
+### 4.编辑 config/deploy.rb
 
 ```
 # 最顶上加这行，注意是「`」号而不是单引号「'」
@@ -67,7 +67,7 @@ append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'public/syst
 ```
 
 
-=== 5.编辑config/deploy/production.rb
+### 5.编辑config/deploy/production.rb
 
 ```
 # server-based syntax
@@ -96,7 +96,7 @@ set :ssh_options, {
 }
 ```
 
-=== 6.部署
+### 6.部署
 
 ```
 # 本地执行命令
